@@ -47,8 +47,10 @@
             });
 
             modalInstance.result.then(function (newTweet) {
-                twitterService.newTweet(newTweet);
-                getLatestTweets();
+                twitterService.newTweet(newTweet).then(function(){
+                    getLatestTweets();
+                });
+
             }, function () {
                 logger.info('Modal dismissed at: ' + new Date());
             });
