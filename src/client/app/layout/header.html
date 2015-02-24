@@ -1,4 +1,4 @@
-<div class="style-test">
+<div class="style-test" ng-controller="Header as vm">
     <h1>My test Angular app to consume twitter</h1>
 
     <button ng-click="vm.connectTwitter()"
@@ -15,5 +15,5 @@
             >
         Disconnect Twitter
     </button>
-
+    <div>{{vm.currentUser.name}}</div>
 </div>

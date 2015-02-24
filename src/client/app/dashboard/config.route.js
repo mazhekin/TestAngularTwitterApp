@@ -1,7 +1,3 @@
-/**
- * Created by Vasiliy on 2/17/2015.
- */
-
 (function() {
     'use strict';
 
@@ -18,6 +14,19 @@
 
     function getRoutes() {
         return [
+            {
+                url: '/tweet/:id',
+                config: {
+                    templateUrl: 'app/dashboard/tweet.html',
+                    controller: 'Tweet',
+                    controllerAs: 'vm',
+                    title: 'tweet',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                    }
+                }
+            },
             {
                 url: '/',
                 config: {

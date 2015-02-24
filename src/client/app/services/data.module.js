@@ -1,3 +1,5 @@
-/**
- * Created by Vasiliy on 2/24/2015.
- */
+(function() {
+    'use strict';
+
+    angular.module('app.data', []);
+})();

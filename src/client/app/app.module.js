@@ -1,7 +1,3 @@
-/**
- * Created by Vasiliy on 2/17/2015.
- */
-
 (function() {
     'use strict';
 
@@ -23,7 +19,6 @@
          * Feature areas
          */
         'app.dashboard',
-        'app.avengers',
         'app.layout'
     ]);
 

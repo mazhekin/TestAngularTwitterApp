@@ -1,3 +1,15 @@
 <div>
-    tweet detail
+        <div class="col-xs-2 col-sm-1">
+            <img ng-src="{{vm.tweet.user.profile_image_url}}" class="img-circle">
+        </div>
+        <div class="col-xs-10 col-sm-11">
+            <small>{{vm.tweet.user.name}}</small><br>{{vm.tweet.text}}
+        </div>
+
+    <button ng-click="vm.backToTweets()"
+            type="button"
+            class="btn btn-default"
+            >
+        Back to tweets
+    </button>
 </div>
