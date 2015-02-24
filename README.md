@@ -1,5 +1,5 @@
-# MyTemplate
-My Angular Template
+# TestAngularTwitterApp
+
 
 ## Quick Start
 Clone this repo and run the content locally
