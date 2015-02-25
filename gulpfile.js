@@ -122,7 +122,8 @@ gulp.task('optimize', ['inject', 'fonts', 'images'], function() {
     var assets = plug.useref.assets({searchPath: './'});
     var templateCache = config.temp + config.templateCache.file;
     var cssFilter = plug.filter('**/*.css');
-    var jsFilter = plug.filter('**/*.js');
+    var jsLibFilter = plug.filter('**/lib.js');
+    var jsAppFilter = plug.filter('**/app.js');
 
     return gulp
         .src(config.index)
@@ -134,11 +135,20 @@ gulp.task('optimize', ['inject', 'fonts', 'images'], function() {
         .pipe(cssFilter)
         .pipe(plug.csso())
         .pipe(cssFilter.restore())
-        .pipe(jsFilter)
+
+        .pipe(jsLibFilter)
         .pipe(plug.uglify())
-        .pipe(jsFilter.restore())
+        .pipe(jsLibFilter.restore())
+
+        .pipe(jsAppFilter)
+        .pipe(plug.ngAnnotate())
+        .pipe(plug.uglify())
+        .pipe(jsAppFilter.restore())
+
+        .pipe(plug.rev())// app.js --> app.lj8889jr.js
         .pipe(assets.restore())
-        .pipe(plug.useref())
+        .pipe(plug.useref()) // parse the build blocks in the HTML, replace them and pass those files through
+        .pipe(plug.revReplace())
         .pipe(gulp.dest(config.build));
 });
 

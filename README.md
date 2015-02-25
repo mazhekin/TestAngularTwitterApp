@@ -8,3 +8,6 @@ $ npm install
 $ bower install
 $ npm start
 ```
+
+## Demo
+http://mazhekin.azurewebsites.net
